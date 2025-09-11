@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuo pipefail
+
+# 加载私密环境变量（供手动/cron 一致生效）
+set -a
+[ -f /etc/stockrss.env ] && . /etc/stockrss.env
+set +a
+
+# 你的原有内容从这里继续，例如：
+# LOG 目录、激活 venv、调用 build 脚本等
+
 
 # 统一时区
 export TZ=Asia/Shanghai
